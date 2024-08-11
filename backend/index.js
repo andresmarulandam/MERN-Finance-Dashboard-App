@@ -27,7 +27,7 @@ app.use(cors());
 /*Paso 9. ROUTES*/
 app.use('/kpi', kpiRoutes);
 app.use('/product', productRoutes);
-app.use('/transactions', transactionRoutes);
+app.use('/transaction', transactionRoutes);
 
 /* Paso 7. */
 const PORT = process.env.PORT || 9000;
@@ -39,9 +39,9 @@ mongoose
 
     /* ADD DATA ONE TIME ONLY OR AS NEEDED */
 
-    // await mongoose.connection.db.dropDatabase();
-    // KPI.insertMany(kpis);
-    // Product.insertMany(products);
-    // Transaction.insertMany(transactions);
+    await mongoose.connection.db.dropDatabase();
+    KPI.insertMany(kpis);
+    Product.insertMany(products);
+    Transaction.insertMany(transactions);
   })
   .catch((error) => console.log(`${error} did not connect`));
