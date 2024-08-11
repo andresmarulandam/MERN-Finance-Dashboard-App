@@ -8,7 +8,6 @@ export const api = createApi({
   reducerPath: 'main',
   tagTypes: ['Kpis', 'Products'],
   endpoints: (build) => ({
-    // Paso 5
     getKpis: build.query<Array<GetKpisResponse>, void>({
       query: () => 'kpi/kpis/',
       providesTags: ['Kpis'],
