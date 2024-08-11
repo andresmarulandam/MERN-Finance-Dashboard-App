@@ -8,12 +8,12 @@ import {
 } from '@/state/api';
 import { Box, Typography, useTheme } from '@mui/material';
 import { DataGrid, GridCellParams } from '@mui/x-data-grid';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Cell, Pie, PieChart } from 'recharts';
 
 const Row3 = () => {
   const { palette } = useTheme();
-  const pieColors = [palette.primary[800], palette.primary[500]];
+  const pieColors = [palette.secondary[800], palette.secondary[500]];
 
   const { data: kpiData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
@@ -121,6 +121,7 @@ const Row3 = () => {
           />
         </Box>
       </DashboardBox>
+
       <DashboardBox gridArea="h">
         <BoxHeader
           title="Recent Orders"
@@ -155,6 +156,7 @@ const Row3 = () => {
           />
         </Box>
       </DashboardBox>
+
       <DashboardBox gridArea="i">
         <BoxHeader title="Expense Breakdown By Category" sideText="+4%" />
         <FlexBetween mt="0.5rem" gap="0.5rem" p="0 1rem" textAlign="center">
@@ -179,6 +181,7 @@ const Row3 = () => {
           ))}
         </FlexBetween>
       </DashboardBox>
+
       <DashboardBox gridArea="j">
         <BoxHeader
           title="Overall Summary and Explanation Data"
@@ -187,12 +190,12 @@ const Row3 = () => {
         <Box
           height="15px"
           margin="1.25rem 1rem 0.4rem 1rem"
-          bgcolor={palette.primary[800]}
+          bgcolor={palette.secondary[800]}
           borderRadius="1rem"
         >
           <Box
             height="15px"
-            bgcolor={palette.primary[600]}
+            bgcolor={palette.secondary[600]}
             borderRadius="1rem"
             width="40%"
           ></Box>
