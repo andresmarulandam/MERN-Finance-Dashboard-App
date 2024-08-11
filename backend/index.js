@@ -5,10 +5,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import KpiRoutes from './routes/kpi.js';
+import kpiRoutes from './routes/kpi.js';
 import productRoutes from './routes/product.js';
-import Product from './model/Product.js';
 import KPI from './model/KPI.js';
+import Product from './model/Product.js';
 import { kpis, products } from './data/data.js';
 
 /*Paso 5 CONFIGURATIONS*/
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /*Paso 9. ROUTES*/
-app.use('/kpi', KpiRoutes);
+app.use('/kpi', kpiRoutes);
 app.use('/product', productRoutes);
 
 /* Paso 7. */
